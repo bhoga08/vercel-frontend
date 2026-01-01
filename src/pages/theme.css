@@ -1,0 +1,26 @@
+/* theme.css */
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #1c1c1c;
+  --highlight-color: #007acc;
+  --btn-bg: #ffffff;
+  --btn-text: #007acc;
+  --btn-border: #007acc;
+  --box-bg: #ffffff;
+  --box-border: #e0e0e0;
+  --footer-color: #777777;
+}
+
+/* Dark mode overrides */
+.dark-theme {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --highlight-color: #00ff99;
+  --btn-bg: #1a1a1a;
+  --btn-text: #00ff99;
+  --btn-border: #00ff99;
+  --box-bg: #1f1f1f;
+  --box-border: #333333;
+  --footer-color: #888888;
+}

@@ -1,0 +1,92 @@
+/* --- SIDEBAR STYLES --- */
+
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #f1f5f9;
+  padding: 30px 20px;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3b82f6; /* Learnix Blue */
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Navigation List */
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar nav li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #334155;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav li:hover {
+  background-color: #e2e8f0;
+  transform: translateX(4px);
+}
+
+/* Active Item */
+.sidebar nav .active {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Icon Alignment */
+.sidebar nav li span {
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+}
+
+/* --- RESPONSIVE SIDEBAR --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    padding: 20px 10px;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav li {
+    flex-direction: column;
+    font-size: 12px;
+    padding: 8px 5px;
+    gap: 4px;
+  }
+
+  .sidebar nav li span {
+    font-size: 18px;
+  }
+}

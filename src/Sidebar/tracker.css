@@ -1,0 +1,177 @@
+
+/* Tracker Container */
+.tracker-container {
+  flex: 1;
+  padding: 40px;
+  color: #1e293b;
+  background-color: #f8f9fa; /* Light neutral background */
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.tracker-container h1 {
+  font-size: 2rem;
+  color: #3b82f6; /* Learnix Blue */
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+}
+
+.tracker-container p {
+  color: #475569;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Language Buttons */
+.language-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lang-btn {
+  padding: 15px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: white;
+  background: #64748b;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.lang-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Individual Language Colors */
+.lang-btn.java {
+  background-color: #8b5cf6;
+}
+.lang-btn.python {
+  background-color: #3b82f6;
+}
+.lang-btn.cpp {
+  background-color: #0ea5e9;
+}
+
+.lang-btn.java:hover,
+.lang-btn.python:hover,
+.lang-btn.cpp:hover {
+  background-color: #2563eb;
+}
+
+/* Form */
+.tracker-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  color: #1e293b;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transition: box-shadow 0.5s ease;
+}
+
+.tracker-form:hover {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #3b82f6;
+}
+
+.form-group input,
+.form-group select,
+.tracker-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f1f5f9;
+  color: #1e293b;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.tracker-form textarea:focus {
+  outline: none;
+  border: 1px solid #3b82f6;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px 24px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Table */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  background-color: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+  transition: box-shadow 0.4s ease;
+}
+
+.log-table th,
+.log-table td {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+}
+
+.log-table th {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.log-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .language-buttons {
+    flex-direction: column;
+  }
+
+  .lang-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.register-button:hover {
+  background-color: var(--learnix-blue-dark);
+  transform: scale(1.05);
+}
+.login-button:hover {
+  background-color: var(--learnix-blue-dark);
+  transform: scale(1.05);
+}

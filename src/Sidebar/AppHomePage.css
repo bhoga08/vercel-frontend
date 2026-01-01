@@ -1,0 +1,148 @@
+/* home.css - Light Theme Slate & Lavender */
+
+.home-container {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔥 Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.hero-section h1 {
+  font-size: 42px;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.hero-section .brand {
+  color: #3b82f6; /* Learnix Blue */
+}
+
+.tagline {
+  font-size: 18px;
+  color: #64748b;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.cta-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* ⭐ Features Section */
+.features-section {
+  padding: 60px 20px;
+  background-color: #f1f5f9;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 28px;
+  color: #3b82f6;
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  width: 260px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px rgba(100, 116, 139, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background-color: #f9fafb;
+}
+
+.feature-card h3 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #475569;
+}
+
+/* 📚 Resources Section */
+.resources-section {
+  padding: 60px 20px;
+  background-color: #e2e8f0;
+  text-align: center;
+}
+
+.resources-section h2 {
+  font-size: 26px;
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+.resources-section p {
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.resource-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.resource-links li {
+  margin: 10px 0;
+}
+
+.resource-links a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.resource-links a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* ⚡ Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 14px;
+  border-top: 1px solid #cbd5e1;
+}
