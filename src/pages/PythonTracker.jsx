@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './JavaTracker.css'; // Reusing same CSS theme
+import './javatracker.css'; // Reusing same CSS theme
 
 const pythonTopics = [
   'Introduction to Python',
