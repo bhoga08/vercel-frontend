@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Contact from './pages/Contact';
 import AppHomePage from './Sidebar/AppHomePage';
-import JavaTracker from './pages/JavaTracker';
+import JavaTracker from './pages/Javatracker';
 import PythonTracker from './pages/pythontracker';
 import Cpptracker from './pages/cpptracker';
 import Profile from './Sidebar/Profile';
