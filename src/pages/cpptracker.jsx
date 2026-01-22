@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './JavaTracker.css'; // Reuse same CSS
+import './javatracker.css'; // Reuse same CSS
 
 const cppTopics = [
   'Introduction to C++',
