@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import './tracker.css';
 import './sidebar.css';
+import Sidebar from '../pages/Sidebar';
 
 const Tracker = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Tracker = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5005/api/v1/sessions/create",
+        "https://my-project-nsjg.onrender.com/api/v1/sessions/create",
         formData,
         {
           withCredentials: true // ✅ Sends the auth cookie (JWT)
@@ -52,28 +53,7 @@ const Tracker = () => {
   return (
     <div className="page-container">
       {/* Sidebar */}
-      <div className="sidebar">
-        <h2>📘 Learnix</h2>
-        <nav>
-          <ul>
-            <li className={location.pathname === '/app-home' ? 'active' : ''} onClick={() => navigate('/app-home')}>
-              <span>🏠</span> Home
-            </li>
-            <li className={location.pathname === '/dashboard' ? 'active' : ''} onClick={() => navigate('/dashboard')}>
-              <span>📊</span> Dashboard
-            </li>
-            <li className={location.pathname === '/tracker' ? 'active' : ''} onClick={() => navigate('/tracker')}>
-              <span>📘</span> Tracker
-            </li>
-            <li className={location.pathname === '/goals' ? 'active' : ''} onClick={() => navigate('/goals')}>
-              <span>🎯</span> Goals
-            </li>
-            <li onClick={() => navigate('/logout')}>
-              <span>🚪</span> Logout
-            </li>
-          </ul>
-        </nav>
-      </div>
+     <Sidebar/>
 
       {/* Main Content */}
       <div className="tracker-container">

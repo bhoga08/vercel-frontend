@@ -1,92 +1,207 @@
-/* --- SIDEBAR STYLES --- */
+*{
+    box-sizing:border-box;
+}
 
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#ffffff;
+    border-right:1px solid #e5e7eb;
+
+    position: sticky;
+    left:0;
+    top:0;
+
+    padding:22px;
+
+    transition:.35s;
+    z-index:1000;
+}
+
+.sidebar-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.sidebar-top h2{
+    font-size:24px;
+    color:#111827;
+}
+
+.close-btn{
+    display:none;
+    border:none;
+    background:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar li{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:14px 16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    margin-bottom:8px;
+
+    color:#4b5563;
+
+    transition:.25s;
+}
+
+.sidebar li:hover{
+
+    background:#f3f4f6;
+
+    color:#111827;
+}
+
+.sidebar li.active{
+
+    background:#f3f4f6;
+
+    color:#111827;
+
+    font-weight:600;
+}
+
+.sidebar li svg{
+
+    font-size:18px;
+}
+
+.menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    left:18px;
+
+    top:18px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    z-index:1100;
+
+    font-size:20px;
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.3);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+}
+
+.show-overlay{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.sidebar{
+
+transform:translateX(-100%);
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.show-sidebar{
+
+transform:translateX(0);
+
+}
+
+.close-btn{
+
+display:block;
+
+}
+
+}
 .page-container {
   display: flex;
   min-height: 100vh;
-  background-color: #f8fafc;
-  color: #1e293b;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Sidebar */
 .sidebar {
-  width: 220px;
-  background-color: #f1f5f9;
-  padding: 30px 20px;
-  border-right: 1px solid #e2e8f0;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.04);
+  width: 260px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
 }
 
-.sidebar h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #3b82f6; /* Learnix Blue */
-  margin-bottom: 40px;
-  text-align: center;
+.main-content {
+  flex: 1;
+  padding: 30px;
 }
-
-/* Navigation List */
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.sidebar nav li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  color: #334155;
-  padding: 10px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.sidebar nav li:hover {
-  background-color: #e2e8f0;
-  transform: translateX(4px);
-}
-
-/* Active Item */
-.sidebar nav .active {
-  background-color: #3b82f6;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* Icon Alignment */
-.sidebar nav li span {
-  display: inline-block;
-  width: 24px;
-  text-align: center;
-}
-
-/* --- RESPONSIVE SIDEBAR --- */
 @media (max-width: 768px) {
+
   .sidebar {
-    width: 60px;
-    padding: 20px 10px;
+    transform: translateX(-100%);
+    width: 260px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
   }
 
-  .sidebar h2 {
-    font-size: 16px;
-    margin-bottom: 20px;
+  .sidebar.show-sidebar {
+    transform: translateX(0);
   }
 
-  .sidebar nav li {
-    flex-direction: column;
-    font-size: 12px;
-    padding: 8px 5px;
-    gap: 4px;
-  }
-
-  .sidebar nav li span {
-    font-size: 18px;
+  .menu-btn {
+    display: flex;
   }
 }

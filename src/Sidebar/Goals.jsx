@@ -5,6 +5,7 @@ import './goals.css';
 import './sidebar.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Sidebar from '../pages/Sidebar';
 
 const Goals = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Goals = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5005/api/v1/goals/create",
+        "https://my-project-nsjg.onrender.com/api/v1/goals/create",
         { title: newGoal },
         { withCredentials: true }
       );
@@ -91,18 +92,7 @@ const Goals = () => {
       <ToastContainer position="top-right" autoClose={2000} />
       
       {/* Sidebar */}
-      <div className="sidebar">
-        <h2>📘 Learnix</h2>
-        <nav>
-          <ul>
-            <li onClick={() => navigate('/app-home')}><span>🏠</span> Home</li>
-            <li onClick={() => navigate('/dashboard')}><span>📊</span> Dashboard</li>
-            <li onClick={() => navigate('/tracker')}><span>📘</span> Tracker</li>
-            <li className="active"><span>🎯</span> Goals</li>
-            <li onClick={() => navigate('/logout')}><span>🚪</span> Logout</li>
-          </ul>
-        </nav>
-      </div>
+     <Sidebar/>
 
       {/* Main Goals Section */}
       <div className="goals-container">
