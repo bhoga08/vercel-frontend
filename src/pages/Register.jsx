@@ -58,6 +58,7 @@ const Register = () => {
   }
 );
 
+
       alert(response.data.message || 'Registered successfully!');
       setFormData({
         username: '',
