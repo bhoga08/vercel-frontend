@@ -1,0 +1,132 @@
+.users-page {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f5f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+.users-page h1 {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 25px;
+}
+
+
+/* Table Container */
+
+.users-table {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+thead {
+  background: #2563eb;
+  color: white;
+}
+
+
+th {
+  padding: 15px;
+  text-align: left;
+  font-size: 15px;
+}
+
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+}
+
+
+tbody tr {
+  transition: 0.3s;
+}
+
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* Delete Button */
+
+.delete-user {
+
+  background: #ef4444;
+  color: white;
+
+  border: none;
+  padding: 9px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+
+.delete-user:hover {
+
+  background: #dc2626;
+  transform: translateY(-2px);
+
+}
+
+
+/* Empty State */
+
+.no-users {
+
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .users-page{
+    padding:20px;
+  }
+
+
+  .users-page h1{
+    font-size:22px;
+  }
+
+
+  th,td{
+
+    padding:12px;
+    font-size:13px;
+
+  }
+
+
+  .delete-user{
+
+    padding:7px 12px;
+    font-size:12px;
+
+  }
+
+}
