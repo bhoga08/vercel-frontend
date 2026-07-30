@@ -17,7 +17,7 @@ const Goals = () => {
 
   const fetchGoals = async () => {
     try {
-      const res = await axios.get('http://localhost:5005/api/v1/goals', {
+      const res = await axios.get('https://my-project-nsjg.onrender.com/api/v1/goals', {
         withCredentials: true
       });
       setGoalsList(res.data);

@@ -18,7 +18,7 @@ const Profile = () => {
   const [file, setFile] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5005/api/user/profile')
+    axios.get('https://my-project-nsjg.onrender.com/api/user/profile')
       .then(res => setProfile(res.data))
       .catch(err => console.error('Error loading profile:', err));
   }, []);

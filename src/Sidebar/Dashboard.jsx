@@ -26,7 +26,7 @@ const Dashboard = () => {
 
   const fetchLearning = async () => {
     try {
-      const res = await axios.get("http://localhost:5005/api/v1/sessions", {
+      const res = await axios.get("https://my-project-nsjg.onrender.com/api/v1/sessions", {
         withCredentials: true
       });
       setLearningData(res.data || []);
