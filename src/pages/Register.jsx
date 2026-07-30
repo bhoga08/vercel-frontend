@@ -49,11 +49,14 @@ const Register = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post('http://localhost:5005/api/v1/users/register', {
-        username: formData.username,
-        mobileNumber: formData.mobileNumber,
-        password: formData.password,
-      });
+      const response = await axios.post(
+  "https://my-project-nsjg.onrender.com/api/v1/users/register",
+  {
+    username: formData.username,
+    mobileNumber: formData.mobileNumber,
+    password: formData.password,
+  }
+);
 
       alert(response.data.message || 'Registered successfully!');
       setFormData({
