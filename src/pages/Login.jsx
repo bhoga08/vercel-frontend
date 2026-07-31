@@ -42,15 +42,21 @@ const Login = () => {
         payload,
         { withCredentials: true },
       );
+      console.log(response.data);
 
       const { user } = response.data.data;
       const { success } = response.data;
+      console.log(response.data.data.user);
 
       if (success && user) {
         setMessageType("success");
         setMessage("✅ Logged in successfully! Redirecting...");
         setTimeout(() => {
-          navigate("/app-home");
+          if (user.role === "admin") {
+            navigate("/admin");
+          } else {
+            navigate("/app-home");
+          }
         }, 1500);
       } else {
         setMessageType("error");

@@ -50,8 +50,9 @@ useEffect(() => {
           </div>
 
           <div className="stat-card">
+            <h2>Total Goals</h2>
             <p>{stats.totalGoals}</p>
-            <p>0</p>
+          
           </div>
 
           <div className="stat-card">
