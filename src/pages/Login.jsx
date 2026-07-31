@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    identifier: '',
-    password: ''
+    identifier: "",
+    password: "",
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null); // ✅ status message
-  const [messageType, setMessageType] = useState(''); // ✅ 'success' or 'error'
+  const [messageType, setMessageType] = useState(""); // ✅ 'success' or 'error'
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,8 +22,8 @@ const Login = () => {
     const { identifier, password } = formData;
 
     if (!identifier.trim() || !password.trim()) {
-      setMessageType('error');
-      setMessage('Please enter your username or mobile number, and password.');
+      setMessageType("error");
+      setMessage("Please enter your username or mobile number, and password.");
       return;
     }
 
@@ -32,33 +32,34 @@ const Login = () => {
       password: password.trim(),
       ...(isMobile
         ? { mobileNumber: identifier.trim() }
-        : { username: identifier.trim() })
+        : { username: identifier.trim() }),
     };
 
     try {
       setLoading(true);
       const response = await axios.post(
-        'https://my-project-nsjg.onrender.com/api/v1/users/login',
+        "https://my-project-nsjg.onrender.com/api/v1/users/login",
         payload,
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       const { user } = response.data.data;
       const { success } = response.data;
 
       if (success && user) {
-        setMessageType('success');
-        setMessage('✅ Logged in successfully! Redirecting...');
+        setMessageType("success");
+        setMessage("✅ Logged in successfully! Redirecting...");
         setTimeout(() => {
-          navigate('/app-home');
+          navigate("/app-home");
         }, 1500);
       } else {
-        setMessageType('error');
-        setMessage('Login failed. Try again.');
+        setMessageType("error");
+        setMessage("Login failed. Try again.");
       }
     } catch (err) {
-      const msg = err?.response?.data?.message || 'Login failed. Check credentials.';
-      setMessageType('error');
+      const msg =
+        err?.response?.data?.message || "Login failed. Check credentials.";
+      setMessageType("error");
       setMessage(`❌ ${msg}`);
     } finally {
       setLoading(false);
@@ -71,13 +72,13 @@ const Login = () => {
         <h1 className="login-heading">
           Log in to <span className="highlight">Learnix</span>
         </h1>
-        <p className="login-subtext">Track your learning journey like a pro 🚀</p>
+        <p className="login-subtext">
+          Track your learning journey like a pro 🚀
+        </p>
 
         {/* ✅ Show message */}
         {message && (
-          <div className={`login-message ${messageType}`}>
-            {message}
-          </div>
+          <div className={`login-message ${messageType}`}>{message}</div>
         )}
 
         <label>Username or Mobile Number</label>
@@ -102,11 +103,14 @@ const Login = () => {
         />
 
         <button type="submit" className="login-button" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
+          {loading ? "Logging in..." : "Login"}
         </button>
 
         <div className="login-footer-text">
-          Don’t have an account? <a href="/register" className="login-link">Register here</a>
+          Don’t have an account?{" "}
+          <Link to="/register" className="login-link">
+            Register here
+          </Link>
         </div>
       </form>
     </div>

@@ -1,43 +1,44 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Register.css';
+import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "./Register.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    mobileNumber: '',
-    password: '',
-    confirmPassword: '',
+    username: "",
+    mobileNumber: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' });
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const validate = () => {
     const newErrors = {};
 
     if (!formData.username.trim()) {
-      newErrors.username = 'Username is required';
+      newErrors.username = "Username is required";
     }
 
     if (!formData.mobileNumber.trim()) {
-      newErrors.mobileNumber = 'Mobile number is required';
+      newErrors.mobileNumber = "Mobile number is required";
     } else if (!/^\d{10}$/.test(formData.mobileNumber.trim())) {
-      newErrors.mobileNumber = 'Enter a valid 10-digit mobile number';
+      newErrors.mobileNumber = "Enter a valid 10-digit mobile number";
     }
 
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = "Password is required";
     }
 
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = 'Please confirm your password';
+      newErrors.confirmPassword = "Please confirm your password";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(newErrors);
@@ -50,33 +51,36 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-  "https://my-project-nsjg.onrender.com/api/v1/users/register",
-  {
-    username: formData.username,
-    mobileNumber: formData.mobileNumber,
-    password: formData.password,
-  }
-);
+        "https://my-project-nsjg.onrender.com/api/v1/users/register",
+        {
+          username: formData.username,
+          mobileNumber: formData.mobileNumber,
+          password: formData.password,
+        },
+      );
 
-
-      alert(response.data.message || 'Registered successfully!');
+      alert(response.data.message || "Registered successfully!");
       setFormData({
-        username: '',
-        mobileNumber: '',
-        password: '',
-        confirmPassword: '',
+        username: "",
+        mobileNumber: "",
+        password: "",
+        confirmPassword: "",
       });
     } catch (error) {
-      console.error('API Error:', error.response?.data || error.message);
-      alert(error.response?.data?.message || 'Registration failed');
+      console.error("API Error:", error.response?.data || error.message);
+      alert(error.response?.data?.message || "Registration failed");
     }
   };
 
   return (
     <div className="register-wrapper">
       <form className="register-card" onSubmit={onSubmit}>
-        <h1 className="register-heading">Create your <span className="highlight">Learnix</span> Account</h1>
-        <p className="register-subtext">Join now and track your learning journey 🚀</p>
+        <h1 className="register-heading">
+          Create your <span className="highlight">Learnix</span> Account
+        </h1>
+        <p className="register-subtext">
+          Join now and track your learning journey 🚀
+        </p>
 
         <label>Username</label>
         <input
@@ -120,12 +124,19 @@ const Register = () => {
           placeholder="Confirm password"
           className="register-input"
         />
-        {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+        {errors.confirmPassword && (
+          <p className="error">{errors.confirmPassword}</p>
+        )}
 
-        <button type="submit" className="register-button">Register</button>
+        <button type="submit" className="register-button">
+          Register
+        </button>
 
         <div className="register-footer-text">
-          Already have an account? <a href="/login" className="register-link">Login here</a>
+          Already have an account?{" "}
+          <Link to="/login" className="register-link">
+            Login here
+          </Link>
         </div>
       </form>
     </div>
